@@ -11,20 +11,20 @@ namespace BanHang.Models
     public class User
     {
         [Key]
-        public int id { get; set; }
-        public string name { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
         [Required, EmailAddress]
-        public string email { get; set; }
+        public string Email { get; set; }
         [Required]
-        public string password { get; set; }
+        public string Password { get; set; }
         [NotMapped]
         [Required]
         [System.ComponentModel.DataAnnotations.Compare("password")]
         public string ConfirmPassword { get; set; }
         [Required, MinLength(9), MaxLength(13)]
-        public string phone { get; set; }
-        public string address { get; set; }
-        public string role { get; set; }
-        public ICollection<Order> orders { get; set; }
+        public string Phone { get; set; }
+        public string Address { get; set; }
+        public string Role { get; set; }
+        public ICollection<Order> Orders { get; set; }
     }
 }

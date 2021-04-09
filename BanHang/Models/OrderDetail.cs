@@ -11,14 +11,14 @@ namespace BanHang.Models
     public class OrderDetail
     {
         [Key]
-        public int id { get; set; }
+        public int Id { get; set; }
         public int Product_id { get; set; }
         [ForeignKey("Product_id")]
         public virtual Product Product { get; set; }
         public int Order_id { get; set; }
         [ForeignKey("Order_id")]
         public virtual Order Order { get; set; }
-        public int Price { get; set; }
+        public double UnitPrice { get; set; }
         public int Quantity { get; set; }
         public int TotalOrder { get; set; }
     }
