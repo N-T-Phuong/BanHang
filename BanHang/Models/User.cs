@@ -11,17 +11,18 @@ namespace BanHang.Models
     public class User
     {
         [Key]
-        public int Id { get; set; }
-        public string Name { get; set; }
-        [Required, EmailAddress]
+        public int IdUser { get; set; }
+        public string UserName { get; set; }
+        [Required(ErrorMessage = "Email is required"), EmailAddress]
         public string Email { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Password is required")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
         [NotMapped]
-        [Required]
+        [Required(ErrorMessage ="ConfirmPassword false")]
+        [DataType(DataType.Password)]
         [System.ComponentModel.DataAnnotations.Compare("password")]
         public string ConfirmPassword { get; set; }
-        [Required, MinLength(9), MaxLength(13)]
         public string Phone { get; set; }
         public string Address { get; set; }
         public string Role { get; set; }

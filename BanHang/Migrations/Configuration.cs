@@ -5,14 +5,14 @@ namespace BanHang.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<BanHang.Models.DBConnect>
+    internal sealed class Configuration : DbMigrationsConfiguration<BanHang.Models.ConnectDB>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(BanHang.Models.DBConnect context)
+        protected override void Seed(BanHang.Models.ConnectDB context)
         {
             //  This method will be called after migrating to the latest version.
 

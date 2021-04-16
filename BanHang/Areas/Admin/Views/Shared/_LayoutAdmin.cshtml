@@ -6,34 +6,30 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/ckeditor")
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Trang Chủ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse right">
-                <ul class="nav navbar-nav">
-                    @*<li>@Html.ActionLink("Danh mục sản phẩm ", "Index", "categories")</li>*@
 
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Danh mục", "Index", "Categories")</li>
+                    <li>@Html.ActionLink("Sản phẩm", "Index", "Products")</li>
+                    <li>@Html.ActionLink("Đơn hàng", "Index", "Orders")</li>
+                    <li>@Html.ActionLink("Chi tiết đơn hàng", "Index", "OrderDetails")</li>
                     @if (Session["id_user"] == null)
                     {
-                        <li>@Html.ActionLink("Đăng ký", "Register", "Home")</li>
+                        <li class="right">@Html.ActionLink("Đăng nhập", "Login", "Home")</li>
                         <li>@Html.ActionLink("Đăng nhập", "Login", "Home")</li>
+
                     }
                     else
                     {
-                        @*<li style="color:white; padding:16px">@Session["name_user"]</li>*@
+                        <li class="right" style="color:white; padding:16px;">@Session["name_user"]</li>
                         //hiển thị tên người dùng đăng nhập
-                        <li>@Html.ActionLink("Đăng xuất", "Logout", "Home")</li>
+                        <li class="right">@Html.ActionLink("Đăng xuất", "Logout", "Home")</li>
                     }
-
                 </ul>
             </div>
         </div>
@@ -42,7 +38,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - L-P BAKERY</p>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
 
@@ -51,3 +47,4 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+

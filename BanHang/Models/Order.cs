@@ -11,9 +11,9 @@ namespace BanHang.Models
     public class Order
     {
         [Key]
-        public int Id { get; set; }
-        public int User_id { get; set; }
-        [ForeignKey("User_id")]
+        public int IdOrder { get; set; }
+        public int IdUser { get; set; }
+        [ForeignKey("IdUser")]
         public virtual User User { get; set; }
         public string Note { get; set; }
         public int Total { get; set; }
