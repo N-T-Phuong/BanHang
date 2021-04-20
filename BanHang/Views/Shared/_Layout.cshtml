@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -23,7 +22,7 @@
             <ul class="nav navbar-nav navbar-right">
                 @*<li>@Html.ActionLink("Danh mục sản phẩm ", "Index", "categories")</li>*@
                 <li>
-                    <img src="@Url.Content("~/Content/image/cart.png")" style="height:35px; margin-top:10px;"/>
+                    <img src="@Url.Content("~/Content/image/cart.png")" style="width:35px; height:35px; margin-top:10px;"/>
                     @Html.Action("BagCart", "ShoppingCart")
                 </li>
                 @if (Session["id_user"] == null)

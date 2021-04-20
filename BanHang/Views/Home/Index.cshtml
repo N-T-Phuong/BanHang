@@ -13,10 +13,10 @@
 <div class="row">
     @foreach (var item in Model)
     {
-        <div class="col-sm-6 col-md-4 mt-5" style="background-color:lavender; text-align: center;">
+        <div class="col-sm-6 col-md-4 mt-5" style=" text-align: center;">
             <div class="card">
                 <h2> @Html.DisplayFor(modelItem => item.NameProduct)</h2>
-                <img src="@Url.Content(item.Image)" alt="" height="150" />
+                <img src="~/image/@Html.DisplayFor(modelItem => item.Image)" alt="" height="150" />
                 <br />
                 @Html.DisplayFor(modelItem => item.UnitPrice)
                 <a href="/ShoppingCart/AddtoCart/@item.IdProduct">
