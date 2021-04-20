@@ -14,7 +14,7 @@ namespace BanHang.Controllers
     public class HomeController : Controller
     {
         private ConnectDB db = new ConnectDB();
-        [AllowAnonymous]
+        
         public ActionResult Index()
         {
             var product = db.Products.Include(m => m.Category).ToList();
@@ -85,9 +85,9 @@ namespace BanHang.Controllers
                 Session["id_user"] = ktra_tk.IdUser;
                 Session["name_user"] = ktra_tk.UserName;
                 var checkAdmin = ktra_tk.Role;// kiểm tra có phải admin 
-                if (checkAdmin == "Admin")
+                if (checkAdmin == "admin")
                 {
-                    return RedirectToAction("Index", "Home", new { Area = "Admin" });
+                    return RedirectToAction("Index", "Home", new { Area = "admin" });
                 }
                 else
                 {

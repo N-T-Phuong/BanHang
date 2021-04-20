@@ -129,7 +129,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -137,7 +141,16 @@
     <Compile Include="Migrations\202104161703318_create_table.Designer.cs">
       <DependentUpon>202104161703318_create_table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104170258138_edit_table.cs" />
+    <Compile Include="Migrations\202104170258138_edit_table.Designer.cs">
+      <DependentUpon>202104170258138_edit_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104200632483_edit_order_table.cs" />
+    <Compile Include="Migrations\202104200632483_edit_order_table.Designer.cs">
+      <DependentUpon>202104200632483_edit_order_table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\ConnectDB.cs" />
     <Compile Include="Models\Order.cs" />
@@ -153,6 +166,70 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\image\111.jpg" />
+    <Content Include="Content\image\1234.jpg" />
+    <Content Include="Content\image\1430967449-pancake-sau-rieng-6.jpg" />
+    <Content Include="Content\image\1434429117-banh-su-kem-chien-20.jpg" />
+    <Content Include="Content\image\20131108144733.jpg" />
+    <Content Include="Content\image\234.jpg" />
+    <Content Include="Content\image\40819_food_pizza.jpg" />
+    <Content Include="Content\image\50020041-combo-20-banh-su-que-pho-mai-9.jpg" />
+    <Content Include="Content\image\all1%29.jpg" />
+    <Content Include="Content\image\banh kem sinh nhat.jpg" />
+    <Content Include="Content\image\Banh-kem %286%29.jpg" />
+    <Content Include="Content\image\banh-man-thu-vi-nhat-1.jpg" />
+    <Content Include="Content\image\banh-mi-nhan-man.jpg" />
+    <Content Include="Content\image\banh-su-kem-ca-phe-1.jpg" />
+    <Content Include="Content\image\banhbonglantrung.jpg" />
+    <Content Include="Content\image\banhbonglantrungmuoi.jpg" />
+    <Content Include="Content\image\banhkem-dau.jpg" />
+    <Content Include="Content\image\banhkem.jpg" />
+    <Content Include="Content\image\banhtraicay.jpg" />
+    <Content Include="Content\image\bsn_raucau.jpg" />
+    <Content Include="Content\image\bsn_traicay.png" />
+    <Content Include="Content\image\Caramen-pudding636099031482099583.jpg" />
+    <Content Include="Content\image\cart.png" />
+    <Content Include="Content\image\chicken black pepper_large-900x900.jpg" />
+    <Content Include="Content\image\chocolate-fruit636098975917921990.jpg" />
+    <Content Include="Content\image\COFFE-CHOCOLATE636098977566220885.jpg" />
+    <Content Include="Content\image\combo-20-banh-su-que-kem-sua-tuoi-phu-socola.jpg" />
+    <Content Include="Content\image\crepe-chocolate.jpg" />
+    <Content Include="Content\image\crepe-chuoi.jpg" />
+    <Content Include="Content\image\crepe-dao.jpg" />
+    <Content Include="Content\image\crepe-phap.jpg" />
+    <Content Include="Content\image\crepe-tao.jpg" />
+    <Content Include="Content\image\crepe-traxanh.jpg" />
+    <Content Include="Content\image\crepedau.jpg" />
+    <Content Include="Content\image\cupcake.jpg" />
+    <Content Include="Content\image\dung-khoai-tay-lam-banh-gato-man-cuc-ngon.jpg" />
+    <Content Include="Content\image\foody-banh-su-que-635930347896369908.jpg" />
+    <Content Include="Content\image\Fruit-Cake.jpg" />
+    <Content Include="Content\image\Fruit-Cake.png" />
+    <Content Include="Content\image\Fruit-Cake_7971.jpg" />
+    <Content Include="Content\image\Fruit-Cake_7976.jpg" />
+    <Content Include="Content\image\Fruit-Cake_7979.jpg" />
+    <Content Include="Content\image\Fruit-Cake_7981.jpg" />
+    <Content Include="Content\image\hawaiian paradise_large-900x900.jpg" />
+    <Content Include="Content\image\He-Thong-Banh-Su-Singapore-Chewy-Junior.jpg" />
+    <Content Include="Content\image\Macaron9.jpg" />
+    <Content Include="Content\image\mango-mousse-cake.jpg" />
+    <Content Include="Content\image\MATCHA-MOUSSE.jpg" />
+    <Content Include="Content\image\maxresdefault.jpg" />
+    <Content Include="Content\image\maxresdefault1.jpg" />
+    <Content Include="Content\image\mini.jpg" />
+    <Content Include="Content\image\p1392962167_banh74.jpg" />
+    <Content Include="Content\image\Peach-Cake_3294.jpg" />
+    <Content Include="Content\image\Peach-Cake_3300.jpg" />
+    <Content Include="Content\image\piza1.jpg" />
+    <Content Include="Content\image\pizza-miami.jpg" />
+    <Content Include="Content\image\pizza.jpg" />
+    <Content Include="Content\image\raspberry.jpg" />
+    <Content Include="Content\image\saurieng-dua.jpg" />
+    <Content Include="Content\image\seafood curry_large-900x900.jpg" />
+    <Content Include="Content\image\sli12.jpg" />
+    <Content Include="Content\image\strawberry-delight636102445035635173.jpg" />
+    <Content Include="Content\image\sukem.jpg" />
+    <Content Include="Content\image\sukemdau.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -529,6 +606,12 @@
     <Content Include="Scripts\ckeditor\ckeditor.pack" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -636,11 +719,21 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\ShoppingCart\ShowCart.cshtml" />
+    <Content Include="Views\ShoppingCart\BagCart.cshtml" />
+    <Content Include="Views\ShoppingCart\Shopping_Success.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -656,6 +749,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202104161703318_create_table.resx">
       <DependentUpon>202104161703318_create_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104170258138_edit_table.resx">
+      <DependentUpon>202104170258138_edit_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104200632483_edit_order_table.resx">
+      <DependentUpon>202104200632483_edit_order_table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

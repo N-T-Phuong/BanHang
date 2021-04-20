@@ -1,0 +1,59 @@
+﻿@model IEnumerable<BanHang.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <label>Tên Danh Mục</label>
+        </th>
+        <th>
+            Tên Sản Phẩm
+        </th>
+        <th>
+            Giá Sản Phẩm
+        </th>
+        <th>
+            Hình Ảnh
+        </th>
+        <th>
+            Đặc tả
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.NameCategory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameProduct)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdProduct }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdProduct }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdProduct })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -21,7 +21,7 @@ namespace BanHang.Models
         [NotMapped]
         [Required(ErrorMessage ="ConfirmPassword false")]
         [DataType(DataType.Password)]
-        [System.ComponentModel.DataAnnotations.Compare("password")]
+        [System.ComponentModel.DataAnnotations.Compare("Password")]
         public string ConfirmPassword { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }

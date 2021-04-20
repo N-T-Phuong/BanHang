@@ -1,0 +1,90 @@
+﻿@model BanHang.Models.Cart
+
+@{
+    ViewBag.Title = "ShowCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ShowCart</h2>
+
+@if (Model != null)
+{
+    <table class="table">
+        <tr>
+            <th>Sản phẩm</th>
+            <th>Hình Ảnh</th>
+            <th>Giá</th>
+            <th>Số Lượng</th>
+            <th>Tổng</th>
+            <th>Delete</th>
+        </tr>
+        @foreach (var item in Model.Items)
+        {
+            double total = Convert.ToDouble(item._sp_product.UnitPrice * item._sp_quantity);
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item._sp_product.NameProduct)
+                </td>
+                <td>
+                    <img src="@Url.Content(item._sp_product.Image)" alt="" style="height:150px" />
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item._sp_product.UnitPrice)
+                </td>
+                <td>
+                    @using (Html.BeginForm("Update_Qt_Cart", "ShoppingCart"))
+                    {
+                        <input type="hidden" name="Id_product" value="@item._sp_product.IdProduct" />
+                        <input type="number" name="quantity" value="@item._sp_quantity" size="2" />
+                        <input type="submit" value="Update" />
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item._sp_quantity)
+                </td>
+                <td>@total</td>
+                <td>
+                    <a href="/ShoppingCart/RemoveCart/@item._sp_product.IdProduct">content</a>
+                </td>
+            </tr>
+        }
+    <tr>
+        <td colspan="2"></td>
+        <td colspan="4" style="text-align:center">
+            @using (Html.BeginForm("CheckOut", "ShoppingCart"))
+            {
+                <table style="border-collapse:separate; border-spacing:7px;">
+                    <tr>
+                        <td>Họ và tên</td>
+                        <td><input type="text" name="username" value="" required /></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Địa chỉ</td>
+                        <td><input type="text" name="address" value="" required /></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="@Url.Action("Create", "Users")" class="btn btn-primary" value="Register"></a>
+                        </td>
+                        <td><input type="submit" name="" class="btn btn-success" value="CheckOut" /></td>
+                        <td></td>
+                    </tr>
+
+                </table>
+            }
+        </td>
+    </tr>
+    <tr>
+        <th> colspan="5" style="text-align:right">Total:</th>
+        <th>@Model.Total_Money()</th>
+        <th></th>
+    </tr>
+       
+    </table>
+    <a href="@Url.Action("Index", "Home")" class="btn btn-default">
+        <span class="glyphicon glyphicon-th-list"></span>
+        Shopping More
+    </a>
+}

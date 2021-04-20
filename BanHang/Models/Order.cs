@@ -17,6 +17,7 @@ namespace BanHang.Models
         public virtual User User { get; set; }
         public string Note { get; set; }
         public int Total { get; set; }
+        public DateTime OrderDate { get; set; }
         public ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

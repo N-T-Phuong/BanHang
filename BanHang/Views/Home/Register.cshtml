@@ -1,0 +1,61 @@
+﻿@model BanHang.Models.User
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-danger">@ViewBag.EmailError</h1>
+
+<div class="container">
+    <div class="col-md-6">
+        @using (Html.BeginForm("Register", "Home", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="card">
+                <h2>Register</h2>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.UserName, "UserName :")
+                    @Html.TextBoxFor(m => m.UserName, "", new { @class = "form-control", @placeholder = "fullname" })
+                    @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "badge badge-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email, "Email :")
+                    @Html.TextBoxFor(m => m.Email, "", new { @class = "form-control", @placeholder = "email" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "badge badge-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, "Mật khẩu :")
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control ", @placeholder = " password" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "badge badge-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ConfirmPassword, "Nhập lại mật khẩu :")
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control ", @placeholder = "confirm password" })
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "badge badge-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Phone, "Số điện thoại :")
+                    @Html.TextBoxFor(m => m.Phone, "", new { @class = "form-control", @placeholder = "phone" })
+                    @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "badge badge-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Address, "Địa chỉ :")
+                    @Html.TextBoxFor(m => m.Address, "", new { @class = "form-control", @placeholder = "address" })
+                    @Html.ValidationMessageFor(m => m.Address, "", new { @class = "badge badge-danger" })
+                </div>
+                <div class="form-group">
+                    <input type="submit" name="submit" class="btn btn-primary" value="Register" />
+                    <input type="reset" name="reset" class="btn btn-primary" value="Reset" />
+                    <a class="btn btn-primary"  href="@Url.Action("Login","Home")">Login</a>
+                </div>
+
+            </div>
+        }
+
+    </div>
+</div>
