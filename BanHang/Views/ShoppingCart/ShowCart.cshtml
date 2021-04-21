@@ -26,7 +26,7 @@
                     @Html.DisplayFor(model => item._sp_product.NameProduct)
                 </td>
                 <td>
-                    <img src="@Url.Content(item._sp_product.Image)" alt="" style="height:150px" />
+                    <img src="~/Content/image/@Html.DisplayFor(model => item._sp_product.Image)" alt="" style="height:100px" />
                 </td>
                 <td>
                     @Html.DisplayFor(model => item._sp_product.UnitPrice)
@@ -49,18 +49,18 @@
             </tr>
         }
     <tr >
-        <td colspan="2"></td>
-        <td colspan="4" style="text-align:center" >
+        <td></td>
+        <td colspan="5" style="text-align:center" >
             @using (Html.BeginForm("CheckOut", "ShoppingCart"))
             {
                 <table style="border-collapse:separate; border-spacing:7px;">
                     <tr>
-                        <td>Họ và tên</td>
+                        <td>Họ và tên:</td>
                         <td><input type="text" name="username" value="" required /></td>
                         
                     </tr>
                     <tr>
-                        <td>Địa chỉ</td>
+                        <td>Địa chỉ:</td>
                         <td><input type="text" name="address" value="" required /></td>
                         
                     </tr>

@@ -98,6 +98,7 @@ namespace BanHang.Controllers
                     _od.Product_id = item._sp_product.IdProduct;
                     _od.UnitPrice = item._sp_product.UnitPrice;
                     _od.Quantity = item._sp_quantity;
+                    _od.TotalOrder = Convert.ToInt32(_od.UnitPrice*_od.Quantity);
                     db.OrderDetails.Add(_od);
                 }
                 db.SaveChanges();
@@ -106,7 +107,6 @@ namespace BanHang.Controllers
             }
             catch 
             {
-
                 return Content("Error Checkout.");
             }
         }

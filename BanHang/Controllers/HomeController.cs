@@ -14,7 +14,7 @@ namespace BanHang.Controllers
     public class HomeController : Controller
     {
         private ConnectDB db = new ConnectDB();
-        
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var product = db.Products.Include(m => m.Category).ToList();
@@ -104,7 +104,7 @@ namespace BanHang.Controllers
         public ActionResult Logout()
         {
             Session.Clear();//remove session
-            return RedirectToAction("Login");
+            return Redirect("/Home");
         }
 
         // CREATE MD5 : mã hóa dữ liệu 1 chiều

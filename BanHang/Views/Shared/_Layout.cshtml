@@ -10,35 +10,25 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container" style="background-color:black;">
+
+    <div class="container-fluid ">
+        <nav class="navbar navbar-expand-sm bg-dark">
             <div class="navbar-header">
-                @Html.ActionLink("Trang Chủ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" }) 
-            </div>
-            @*<ul class="nav navbar-nav   ">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Sản Phẩm</a></li>
-            </ul>*@
-            <ul class="nav navbar-nav navbar-right">
-                @*<li>@Html.ActionLink("Danh mục sản phẩm ", "Index", "categories")</li>*@
-                <li>
-                    <img src="@Url.Content("~/Content/image/cart.png")" style="width:35px; height:35px; margin-top:10px;"/>
-                    @Html.Action("BagCart", "ShoppingCart")
-                </li>
+                @Html.ActionLink("Trang Chủ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
                 @if (Session["id_user"] == null)
                 {
-                    <li>@Html.ActionLink("Đăng ký", "Register", "Home")</li>
-                    <li>@Html.ActionLink("Đăng nhập", "Login", "Home")</li>
+                    @Html.ActionLink("Đăng ký", "Register", "Home", new { @class = "navbar-brand" })
+                    @Html.ActionLink("Đăng nhập", "Login", "Home", new { @class = "navbar-brand" })
                 }
                 else
                 {
-                    @*<li style="color:white; padding:16px">@Session["name_user"]</li>*@
-                    //hiển thị tên người dùng đăng nhập
-                    <li>@Html.ActionLink("Đăng xuất", "Logout", "Home")</li>
+                    @Html.ActionLink("Đăng xuất", "Logout", "Home", new { @class = "navbar-brand" })
                 }
-
-            </ul>
-        </div>
+                    <img src="@Url.Content("~/Content/image/cart.png")" style=" padding-top:6px; width:35px; height:35px; float:right; " />
+                    @Html.Action("BagCart", "ShoppingCart")
+            </div>
+        </nav>
     </div>
     <div class="container body-content">
         @RenderBody()

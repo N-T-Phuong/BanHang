@@ -5,10 +5,10 @@
 }
 
 @*<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>*@
+        <h1>ASP.NET</h1>
+        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    </div>*@
 
 <div class="row">
     @foreach (var item in Model)
@@ -16,13 +16,12 @@
         <div class="col-sm-6 col-md-4 mt-5" style=" text-align: center;">
             <div class="card">
                 <h2> @Html.DisplayFor(modelItem => item.NameProduct)</h2>
-                <img src="~/image/@Html.DisplayFor(modelItem => item.Image)" alt="" height="150" />
+                <img src="~/Content/image/@Html.DisplayFor(modelItem => item.Image)" alt="" style="margin:auto;" height="270" width="270" />
                 <br />
-                @Html.DisplayFor(modelItem => item.UnitPrice)
+                <span style="font-weight:bold; color:navy;">@Html.DisplayFor(modelItem => item.UnitPrice).00</span>
                 <a href="/ShoppingCart/AddtoCart/@item.IdProduct">
                     <img src="@Url.Content("~/Content/image/cart.png")" alt="" height="25" />
                 </a>
-                <br />
                 <a class=" btn btn-info btn-sm " href="@Url.Action("Details", "Products", new { id = item.IdProduct })"> Xem chi tiết</a>
             </div>
         </div>
