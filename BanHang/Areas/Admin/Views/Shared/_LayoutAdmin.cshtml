@@ -11,13 +11,12 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container badge-dark">
             <div class="navbar-header">
-                @Html.ActionLink("Trang Chủ", "Index", "Home", new { area = "admin" }, new { @class = "navbar-brand" })
+                @*@Html.ActionLink("Trang Chủ", "Index", "Home", new { area = "admin" }, new { @class = "navbar-brand" })*@
                 @Html.ActionLink("Danh mục", "Index", "Categories", new { area = "admin" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("Sản phẩm ", "Index", "Products", new { area = "admin" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("Đơn hàng chi tiết", "Index", "OrderDetails", new { area = "admin" }, new { @class = "navbar-brand" })
                 @if (Session["id_user"] == null)
                 {
-                    @Html.ActionLink("Đăng ký", "Register", "Home")
                     @Html.ActionLink("Đăng nhập", "Login", "Home")
                 }
                 else

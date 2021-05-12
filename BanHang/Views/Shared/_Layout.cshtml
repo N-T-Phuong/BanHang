@@ -14,7 +14,9 @@
     <div class="container-fluid ">
         <nav class="navbar navbar-expand-sm bg-dark">
             <div class="navbar-header">
-                @Html.ActionLink("Trang Chủ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+                @Html.ActionLink("Trang Chủ", "Index", "Home", new { area = "user" }, new { @class = "navbar-brand" })
+               
 
                 @if (Session["id_user"] == null)
                 {
@@ -25,7 +27,7 @@
                 {
                     @Html.ActionLink("Đăng xuất", "Logout", "Home", new { @class = "navbar-brand" })
                 }
-                    <img src="@Url.Content("~/Content/image/cart.png")" style=" padding-top:6px; width:35px; height:35px; float:right; " />
+                    <img src="@Url.Content("~/Content/image/cart.png")" style=" padding-top:6px; margin-right:-10px; margin-top:-10px; width:35px; height:35px;  " />
                     @Html.Action("BagCart", "ShoppingCart")
             </div>
         </nav>

@@ -7,21 +7,23 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using System.Web.Security;
 //using PagedList;
 
 namespace BanHang.Controllers
 {
+
     public class HomeController : Controller
     {
         private ConnectDB db = new ConnectDB();
-        [AllowAnonymous]
+        
         public ActionResult Index()
         {
             var product = db.Products.Include(m => m.Category).ToList();
             return View(product);
         }
         //Kiểm tra đăng nhập 
-        [Authorize]
+        
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -67,6 +69,7 @@ namespace BanHang.Controllers
 
         }
         //GET:Login
+
         public ActionResult Login()
         {
             ViewBag.Message = "Your contact page.";
@@ -91,16 +94,29 @@ namespace BanHang.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index","Home");
                 }
+                //FormsAuthentication.SetAuthCookie(ktra_tk.Email, false);
+                //if( Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
+                //    && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
+                //{
+                //    return Redirect(returnUrl);
+                //}
+                //else
+                //{
+                //    return RedirectToAction("Index");
+                //}
+
                 //return RedirectToAction("Index");
             }
             else
             {
+                //ModelState.AddModelError("", "Invalid user/pass");
                 ViewBag.LoginError = "Đăng nhập thất bại";
                 return View();
             }
         }
+        //[Authorize]
         public ActionResult Logout()
         {
             Session.Clear();//remove session
@@ -122,6 +138,10 @@ namespace BanHang.Controllers
             }
             return mahoa;
         }
+        //private bool IsValid(User _u)
+        //{
+        //    return (_u.Email == "test" && _u.Password == "test");
+        //}
         //linq: tạo action trả về dữ liệu bảng account 
         /*public ActionResult DemoLinq ()
         {

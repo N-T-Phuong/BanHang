@@ -81,6 +81,7 @@ namespace BanHang.Controllers
             return View();
         }
         //checkout
+        
         public ActionResult CheckOut(FormCollection form)
         {
             try

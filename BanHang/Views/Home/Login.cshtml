@@ -9,10 +9,10 @@
 
 <div class="container">
     <div class="col-md-6 offset-md-3 pt-5  ">
-        @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+        @using (Html.BeginForm("Login", "Home", FormMethod.Post)) //new { returnUrl = Request.QueryString["ReturnUrl"] }, 
         {
-            @Html.AntiForgeryToken()
-            <div class="card align-items-center">
+                        @Html.AntiForgeryToken()
+                        <div class="card align-items-center">
                 <h2>Đăng nhập</h2>
                 <div class="form-group">
                     @Html.LabelFor(m => m.Email, "Email :")

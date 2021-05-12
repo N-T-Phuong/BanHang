@@ -10,10 +10,10 @@ using BanHang.Models;
 
 namespace BanHang.Areas.Admin.Controllers
 {
+    
     public class CategoriesController : Controller
     {
         private ConnectDB db = new ConnectDB();
-
         // GET: Admin/Categories
         public ActionResult Index()
         {
@@ -34,7 +34,7 @@ namespace BanHang.Areas.Admin.Controllers
             }
             return View(category);
         }
-
+        
         // GET: Admin/Categories/Create
         public ActionResult Create()
         {
